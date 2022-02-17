@@ -7,7 +7,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 
 @Service
@@ -17,6 +16,8 @@ public class MyUserDetailsService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
       // bu method App'e user'in username ve authorizes tanimladi-->cubuk adam tum vasiflariyla create edildi
-        return new User(username: "admin", password: "nimda", new ArrayList<>());
+        return new User("admin","nimda", new ArrayList<>());
+        // ArrayList<>()--> collection type authorizes birden fazla ve sabit old icin depolayacak bir bos array create edildi
+
     }
 }
